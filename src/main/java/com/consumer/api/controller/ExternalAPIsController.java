@@ -20,6 +20,8 @@ public class ExternalAPIsController {
     @GetMapping
     public ResponseEntity<String> getAllDatas(){
 
+
+
         String allDatas = externalAPIsService.getAllDatas();
         return ResponseEntity.ok(allDatas);
     }
