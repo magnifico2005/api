@@ -14,7 +14,7 @@ public class ExternalAPIsService {
 
 
     public String getAllDatas(){
-        String url ="https://restcountries.com/v3.1/all?fields=name,capital,region,flags";
+        String url ="http://viacep.com.br/ws/88104200/json/";
 
       ResponseEntity<String> forEntity = restTemplate.getForEntity(url, String.class);
 
