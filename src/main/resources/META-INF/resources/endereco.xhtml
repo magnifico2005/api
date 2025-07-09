@@ -4,26 +4,63 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-    <title>Endereço</title>
+    <title>Consulta de Endereço</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </h:head>
 <h:body>
-    <h:form>
-        <p:panel header="Dados do Endereço" style="width: 400px; margin: 2rem auto;">
-            <p:outputLabel value="Bairro:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.bairro}" readonly="true"/><br/>
+    <div style="margin: 20px;">
+        <h:form id="enderecoForm">
+            <p:panel header="Dados do Endereço" 
+                     style="width: 500px; margin: 2rem auto;"
+                     styleClass="ui-panel-titlebar-icon">
+                
+                <p:panelGrid columns="2" layout="grid" 
+                             styleClass="ui-panelgrid-blank">
+                    
+                    <p:outputLabel for="cep" value="CEP:"/>
+                    <p:inputText id="cep" 
+                                value="#{enderecoBean.endereco.cep}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
+                    
+                    <p:outputLabel for="logradouro" value="Logradouro:"/>
+                    <p:inputText id="logradouro" 
+                                value="#{enderecoBean.endereco.logradouro}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
+                    
+                    <p:outputLabel for="bairro" value="Bairro:"/>
+                    <p:inputText id="bairro" 
+                                value="#{enderecoBean.endereco.bairro}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
 
-            <p:outputLabel value="Localidade:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.localidade}" readonly="true"/><br/>
+                    <p:outputLabel for="localidade" value="Localidade:"/>
+                    <p:inputText id="localidade" 
+                                value="#{enderecoBean.endereco.localidade}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
 
-            <p:outputLabel value="UF:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.uf}" readonly="true"/><br/>
+                    <p:outputLabel for="uf" value="UF:"/>
+                    <p:inputText id="uf" 
+                                value="#{enderecoBean.endereco.uf}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
 
-            <p:outputLabel value="Estado:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.estado}" readonly="true"/><br/>
+                    <p:outputLabel for="estado" value="Estado:"/>
+                    <p:inputText id="estado" 
+                                value="#{enderecoBean.endereco.estado}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
 
-            <p:outputLabel value="Região:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.regiao}" readonly="true"/>
-        </p:panel>
-    </h:form>
+                    <p:outputLabel for="regiao" value="Região:"/>
+                    <p:inputText id="regiao" 
+                                value="#{enderecoBean.endereco.regiao}" 
+                                readonly="true" 
+                                style="width: 100%;"/>
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+    </div>
 </h:body>
 </html>

@@ -1,12 +1,12 @@
 package com.consumer.api.bean;
 
 import com.consumer.api.response.EnderecoResponse;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Named;
 
-@Named("enderecoBean")
-@RequestScoped
+@Component("enderecoBean")
+@Scope("request")
 public class EnderecoBean {
 
     private EnderecoResponse endereco;

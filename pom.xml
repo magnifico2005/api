@@ -46,32 +46,26 @@
 			<artifactId>postgresql</artifactId>
 		</dependency>
 
-		<!-- JSF -->
+		<!-- JSF com Spring Boot -->
 		<dependency>
 			<groupId>org.joinfaces</groupId>
-			<artifactId>joinfaces</artifactId>
+			<artifactId>joinfaces-starter</artifactId>
 			<version>5.2.6</version>
 		</dependency>
 
-		<!-- OmniFaces 4.x (requer CDI!) -->
+		<!-- PrimeFaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>13.0.0</version>
+			<classifier>jakarta</classifier>
+		</dependency>
+
+		<!-- OmniFaces -->
 		<dependency>
 			<groupId>org.omnifaces</groupId>
 			<artifactId>omnifaces</artifactId>
 			<version>4.3</version>
-		</dependency>
-
-		<!-- CDI e Weld -->
-		<dependency>
-			<groupId>org.jboss.weld.se</groupId>
-			<artifactId>weld-se-core</artifactId>
-			<version>5.1.0.Final</version>
-		</dependency>
-
-		<dependency>
-			<groupId>jakarta.enterprise</groupId>
-			<artifactId>jakarta.enterprise.cdi-api</artifactId>
-			<version>${jakarta.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Lombok -->
