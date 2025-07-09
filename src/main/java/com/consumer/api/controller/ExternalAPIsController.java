@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 public class ExternalAPIsController {
 
 
@@ -17,11 +17,8 @@ public class ExternalAPIsController {
     @Autowired
     private ExternalAPIsService externalAPIsService;
 
-    @GetMapping
+    @GetMapping("/endereco")
     public ResponseEntity<String> getAllDatas(){
-
-
-
         String allDatas = externalAPIsService.getAllDatas();
         return ResponseEntity.ok(allDatas);
     }
