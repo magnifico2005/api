@@ -11,7 +11,7 @@
         <p:panel header="Dados do Endereço" style="width: 400px; margin: 2rem auto;">
             <p:outputLabel value="Bairro:"/><br/>
             <p:inputText value="#{enderecoBean.endereco.bairro}" readonly="true"/><br/>
-
+            <h:outputText value="Bean resolvido? #{enderecoBean != null ? 'SIM' : 'NÃO'}" />
             <p:outputLabel value="Localidade:"/><br/>
             <p:inputText value="#{enderecoBean.endereco.localidade}" readonly="true"/><br/>
 
