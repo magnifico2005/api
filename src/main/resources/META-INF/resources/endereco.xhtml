@@ -5,25 +5,90 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Endereço</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-field {
+            margin-bottom: 15px;
+        }
+        .form-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-field input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-field input[readonly] {
+            background-color: #f9f9f9;
+            color: #666;
+        }
+    </style>
 </h:head>
 <h:body>
-    <h:form>
-        <p:panel header="Dados do Endereço" style="width: 400px; margin: 2rem auto;">
-            <p:outputLabel value="Bairro:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.bairro}" readonly="true"/><br/>
+    <div class="form-container">
+        <h2>Dados do Endereço</h2>
+        
+        <h:form id="enderecoForm">
+            <div class="form-field">
+                <p:outputLabel value="CEP:" for="cep"/>
+                <p:inputText id="cep" value="#{enderecoBean.endereco.cep}" readonly="true" styleClass="form-control"/>
+            </div>
 
-            <p:outputLabel value="Localidade:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.localidade}" readonly="true"/><br/>
+            <div class="form-field">
+                <p:outputLabel value="Logradouro:" for="logradouro"/>
+                <p:inputText id="logradouro" value="#{enderecoBean.endereco.logradouro}" readonly="true" styleClass="form-control"/>
+            </div>
 
-            <p:outputLabel value="UF:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.uf}" readonly="true"/><br/>
+            <div class="form-field">
+                <p:outputLabel value="Bairro:" for="bairro"/>
+                <p:inputText id="bairro" value="#{enderecoBean.endereco.bairro}" readonly="true" styleClass="form-control"/>
+            </div>
 
-            <p:outputLabel value="Estado:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.estado}" readonly="true"/><br/>
+            <div class="form-field">
+                <p:outputLabel value="Localidade:" for="localidade"/>
+                <p:inputText id="localidade" value="#{enderecoBean.endereco.localidade}" readonly="true" styleClass="form-control"/>
+            </div>
 
-            <p:outputLabel value="Região:"/><br/>
-            <p:inputText value="#{enderecoBean.endereco.regiao}" readonly="true"/>
-        </p:panel>
-    </h:form>
+            <div class="form-field">
+                <p:outputLabel value="UF:" for="uf"/>
+                <p:inputText id="uf" value="#{enderecoBean.endereco.uf}" readonly="true" styleClass="form-control"/>
+            </div>
+
+            <div class="form-field">
+                <p:outputLabel value="Estado:" for="estado"/>
+                <p:inputText id="estado" value="#{enderecoBean.endereco.estado}" readonly="true" styleClass="form-control"/>
+            </div>
+
+            <div class="form-field">
+                <p:outputLabel value="Região:" for="regiao"/>
+                <p:inputText id="regiao" value="#{enderecoBean.endereco.regiao}" readonly="true" styleClass="form-control"/>
+            </div>
+
+            <div class="form-field">
+                <p:outputLabel value="DDD:" for="ddd"/>
+                <p:inputText id="ddd" value="#{enderecoBean.endereco.ddd}" readonly="true" styleClass="form-control"/>
+            </div>
+
+            <p:commandButton value="Atualizar" action="#{enderecoBean.init}" update="@form" styleClass="btn btn-primary"/>
+        </h:form>
+    </div>
 </h:body>
 </html>
